@@ -1,0 +1,14 @@
+name: First GitHub Action
+
+on: push  # Runs when you push code to the repo
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest  # Using GitHub's Ubuntu runner
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4  # Pulls your repo code
+
+      - name: Print a Message
+        run: echo "Hello, GitHub Actions!"
