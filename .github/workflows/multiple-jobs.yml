@@ -1,0 +1,28 @@
+name: Run Multiple Jobs
+
+on: push
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Run Tests
+        run: echo "Running tests on Ubuntu"
+
+  build-job:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Build App
+        run: echo "Building on macOS"
+        
+  deploy-job:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Deploy App
+        run: echo "Deploying on Windows"
